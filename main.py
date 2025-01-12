@@ -10,7 +10,6 @@ class BooksCollector:
     def add_new_book(self, name):
         if not self.books_genre.get(name) and 0 < len(name) < 41:
             self.books_genre[name] = ''
-        print(self.books_genre)
 
     # устанавливаем книге жанр
     def set_book_genre(self, name, genre):
@@ -56,3 +55,5 @@ class BooksCollector:
     # получаем список Избранных книг
     def get_list_of_favorites_books(self):
         return self.favorites
+
+
