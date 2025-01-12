@@ -53,10 +53,8 @@ class TestBooksCollector:
         name1 = "Название книги 1"
         genre = "Фантастика"
         collector.books_genre[name1] = genre
-
         name2 = "Название книги 2"
         collector.books_genre[name2] = genre
-
         # Проверяем, что функция корректно возвращает список названий книг для заданного жанра
         result = collector.get_books_with_specific_genre(genre)
         assert result == ["Название книги 1", "Название книги 2"]
