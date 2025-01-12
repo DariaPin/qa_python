@@ -7,7 +7,7 @@ class TestBooksCollector:
         collector = BooksCollector()
         name = "Очень длинное название книгиОчень длинное название книгиОчень длинное название книги"
         collector.add_new_book(name)
-        assert name not in collector.books_genre, "ошибка"
+        assert name not in collector.books_genre
 
     def test_add_new_book_if_not_in_book_list_and_incorrect_length2(self):
         collector = BooksCollector()
@@ -78,14 +78,11 @@ class TestBooksCollector:
         collector = BooksCollector()
         name1 = "Название книги 1"
         genre1 = "Комедии"
-
         # Добавляем книгу в словарь books_genre с жанром, подходящим для детей
         collector.books_genre[name1] = genre1
-
         name2 = "Название книги 2"
         genre2 = "Ужасы"
         collector.books_genre[name2] = genre2
-
         # Проверяем, что функция корректно возвращает список названий книг для заданного жанра
         result = collector.get_books_for_children()
         assert result == [name1]
