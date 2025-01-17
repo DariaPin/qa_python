@@ -121,4 +121,3 @@ class TestBooksCollector:
         collector.favorites = ["Book1", "Book2"]
         result = collector.get_list_of_favorites_books()
         assert result == ["Book1", "Book2"]
-        print("Book1")
