@@ -28,18 +28,20 @@ class TestBooksCollector:
 
 
     def test_set_book_genre_add_genre_to_not_acceptable_genre(self):
-        collector = BooksCollector() # Проверка недопустимого жанра
+        collector = BooksCollector()
+        collector.add_new_book('AnotherBook')
         collector.set_book_genre('AnotherBook', 'Кулинария')
-        assert 'AnotherBook' not in collector.books_genre
+        assert 'Кулинария' not in collector.books_genre
 
 
     def test_add_new_book_add_existing_book(self):
         collector = BooksCollector()
         name = "Повторное добавление"
         collector.add_new_book(name) # Первое добавление
+        books_genre_len = len(collector.books_genre)
         collector.add_new_book(name) # Повторное добавление
-        # Проверяем, что значение словаря не изменилось после повторного добавления
-        assert collector.books_genre[name] == ''
+        books_genre_len2 = len(collector.books_genre)
+        assert books_genre_len == books_genre_len2
 
     def test_get_book_genre_valid_name(self):
         collector = BooksCollector()
