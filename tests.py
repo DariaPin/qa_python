@@ -27,11 +27,11 @@ class TestBooksCollector:
         assert 'NonExistingBook' not in collector.books_genre
 
 
-    def test_set_book_genre_add_genre_to_not_acceptable_genre_1(self):
+    def test_set_book_genre_add_genre_to_not_acceptable_genre(self):
         collector = BooksCollector()
         collector.add_new_book('AnotherBook')
         collector.set_book_genre('AnotherBook', 'Кулинария')
-        assert 'AnotherBook' not in collector.books_genre
+        assert 'Кулинария' not in collector.books_genre
 
 
     def test_add_new_book_add_existing_book(self):
