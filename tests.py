@@ -31,7 +31,7 @@ class TestBooksCollector:
         collector = BooksCollector()
         collector.add_new_book('AnotherBook')
         collector.set_book_genre('AnotherBook', 'Кулинария')
-        assert 'Кулинария' not in collector.books_genre
+        assert 'AnotherBook' not in collector.books_genre
 
 
     def test_add_new_book_add_existing_book(self):
